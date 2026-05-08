@@ -219,6 +219,40 @@ section { position: relative; z-index: 10; padding: 120px 0; border-top: 1px sol
 .hw-tag:hover { color: var(--gold-bright); border-color: var(--gold); transform: translateY(-2px); }
 .hw-tag b { color: var(--gold-bright); font-weight: 500; }
 
+/* ===== ARCHITECTURE & SHOWCASE ===== */
+.arch-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 80px; }
+@media (max-width: 900px) { .arch-feature { grid-template-columns: 1fr; gap: 32px; } }
+.arch-feature.reverse { grid-template-columns: 1fr 1fr; }
+@media (min-width: 901px) { .arch-feature.reverse > div:first-child { order: 2; } .arch-feature.reverse > div:last-child { order: 1; } }
+.arch-feature .arch-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; color: var(--gold-bright); text-transform: uppercase; margin-bottom: 14px; }
+.arch-feature h3 { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1.05; color: var(--paper); margin-bottom: 16px; letter-spacing: -0.01em; }
+.arch-feature .sub { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: var(--teal); text-transform: uppercase; margin-bottom: 18px; }
+.arch-feature p { font-size: 16px; line-height: 1.65; color: var(--paper-mute); margin-bottom: 18px; }
+.arch-feature .arch-img-wrap { background: rgba(255,255,255,0.04); padding: 16px; border: 1px solid var(--rule); border-radius: 4px; transition: border-color 0.4s; overflow: hidden; }
+.arch-feature .arch-img-wrap:hover { border-color: var(--gold); }
+.arch-feature img { width: 100%; height: auto; display: block; border-radius: 2px; }
+.arch-specs { font-family: var(--mono); font-size: 11px; line-height: 1.7; color: var(--paper-mute); border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 14px; }
+.arch-specs b { color: var(--gold-bright); font-weight: 500; }
+
+.gallery-strip { padding-top: 60px; border-top: 1px solid var(--rule); }
+.gallery-strip-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; color: var(--gold-bright); text-transform: uppercase; margin-bottom: 32px; text-align: center; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .gallery-grid { grid-template-columns: 1fr; } }
+.gallery-card { background: rgba(10,23,56,0.4); border: 1px solid var(--rule); padding: 12px; transition: all 0.3s; overflow: hidden; }
+.gallery-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.gallery-card img { width: 100%; height: 180px; object-fit: cover; display: block; border-radius: 2px; }
+.gallery-card .gtitle { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; color: var(--paper-mute); text-transform: uppercase; margin-top: 12px; padding: 0 4px 4px; }
+.gallery-card .gtitle b { color: var(--gold-bright); font-weight: 500; }
+
+/* Award callout */
+.award-callout { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: center; padding: 32px; background: linear-gradient(135deg, rgba(212,175,55,0.10), rgba(110,224,200,0.04)); border: 1px solid var(--gold); margin: 60px 0; }
+@media (max-width: 700px) { .award-callout { grid-template-columns: 1fr; gap: 20px; } }
+.award-callout img { width: 100%; height: auto; border-radius: 2px; }
+.award-callout .award-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; color: var(--gold-bright); text-transform: uppercase; margin-bottom: 10px; }
+.award-callout h4 { font-family: var(--display); font-weight: 700; font-size: 26px; color: var(--paper); margin-bottom: 8px; line-height: 1.15; }
+.award-callout p { font-family: var(--serif); font-size: 16px; line-height: 1.55; color: var(--paper-mute); }
+
 /* ===== CAPABILITIES ===== */
 .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
 @media (max-width: 880px) { .cap-grid { grid-template-columns: 1fr; } }
@@ -331,6 +365,7 @@ section { position: relative; z-index: 10; padding: 120px 0; border-top: 1px sol
 .pub .title { font-family: var(--display); font-weight: 600; font-size: 19px; line-height: 1.3; color: var(--paper); margin-bottom: 6px; }
 .pub .auth { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--paper-mute); }
 .pub .venue { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--teal); text-align: right; padding-top: 8px; }
+.pub .status-badge { display: inline-block; font-size: 9px; padding: 2px 6px; margin-top: 4px; border: 1px solid var(--gold); color: var(--gold-bright); border-radius: 2px; letter-spacing: 0.15em; }
 
 /* ===== PARTNERS ===== */
 .partners { display: flex; gap: 56px; flex-wrap: wrap; align-items: center; justify-content: center; padding: 56px 0; font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; color: var(--paper-mute); text-transform: uppercase; }
@@ -389,6 +424,7 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
     <ul>
       <li><a href="#platforms">Platforms</a></li>
       <li><a href="#systems">Systems</a></li>
+      <li><a href="#architecture">Architecture</a></li>
       <li><a href="#capabilities">Capabilities</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#publications">Publications</a></li>
@@ -1010,6 +1046,109 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
   </div>
 </section>
 
+<!-- ===== ARCHITECTURE & SHOWCASE ===== -->
+<section id="architecture">
+  <div class="wrap">
+    <div class="section-eyebrow">— Architecture &amp; Showcase</div>
+    <h2 class="section-h2">From paper to silicon. From silicon to flight.</h2>
+    <p class="section-lede">Real diagrams, real hardware, real fielded research. The block diagrams from our published papers, the posters from our presentations, and the award certificates that say the work is good.</p>
+
+    <!-- Feature 1: KHONSU Architecture -->
+    <div class="arch-feature">
+      <div>
+        <div class="arch-tag">— Featured Architecture · KHONSU</div>
+        <h3>Per-AUP-ZU3 worker, single-DMA streaming shell.</h3>
+        <div class="sub">HEART 2026 · Heidelberg</div>
+        <p>The KHONSU hardware architecture distributes hash/XOF work across four parallel lanes per worker, decoupled by AXI4-Stream FIFOs. Each lane runs in CHAIN mode (32→32 byte hash chaining) or MERGE_CHAIN mode (64→32 byte node compression). A Verilog RTL collector repacketizes lane outputs back to a single S2MM stream, isolating the lanes from DMA backpressure.</p>
+        <div class="arch-specs">
+          <b>LUT</b> 47,460 · 67% utilization<br>
+          <b>FF</b> 61,086 · 43% utilization<br>
+          <b>BRAM</b> 40.5 · 19% utilization<br>
+          <b>Frequency</b> 300–330 MHz internal<br>
+          <b>Total</b> 8 hardware lanes across two AUP-ZU3 boards
+        </div>
+      </div>
+      <div class="arch-img-wrap">
+        <img src="assets/khonsu-architecture.png" alt="KHONSU hardware architecture: ARM PS, AXI DMA, RTL distributor, four HLS hash lanes, AXI-Stream FIFOs, Verilog collector, output FIFO" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Feature 2: GomacTech poster -->
+    <div class="arch-feature reverse">
+      <div>
+        <div class="arch-tag">— Conference Poster · GomacTech 2026</div>
+        <h3>Trusted microelectronics for NLP-controlled UAV swarms.</h3>
+        <div class="sub">DoD GomacTech 2026 · Distribution A</div>
+        <p>The full conference poster from GomacTech 2026, presenting our trusted microelectronic stack for NLP-controlled UAV swarms operating in GPS-denied and electronically contested environments. Memory-safe Rust firmware, ASCON authenticated encryption, post-quantum ML-KEM provisioning, hybrid FPGA/FPAA TRNG, and dual-link communications (ExpressLRS primary, LoRa fallback) — designed to deliver mission integrity under jamming and C2 denial.</p>
+        <div class="arch-specs">
+          <b>Authors</b> Mohamed El-Hadedy · Benny Cheng (NSWC Corona)<br>
+          <b>Funding</b> AFRL · U.S. Navy / NAVSEA<br>
+          <b>Status</b> Distribution A · Approved for Public Release
+        </div>
+      </div>
+      <div class="arch-img-wrap">
+        <img src="assets/gomactech-poster.png" alt="Trusted Microelectronics for NLP-Controlled UAV Swarms in Contested Environments — full GomacTech 2026 poster with mission need, threat model, system stack, and degradation control states" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Award callout -->
+    <div class="award-callout">
+      <div>
+        <img src="assets/telepresence-3rd.png" alt="2025 IEEE Telepresence Competition Third Place certificate awarded to Mohamed El-Hadedy and the RSC Lab Team for tele-operating a rover with full telemetry on simulated lunar terrain in Perth, Australia">
+      </div>
+      <div>
+        <div class="award-eyebrow">— International Award</div>
+        <h4>3rd Place · 2025 IEEE Telepresence Competition</h4>
+        <p>Australian Automation and Robotics Precinct (AARP), Perth, Australia. RSC Lab Team led by Dr. El-Hadedy successfully tele-operated a rover with full telemetry on simulated lunar terrain — competing internationally against teams from across robotics and aerospace research.</p>
+      </div>
+    </div>
+
+    <!-- Gallery: paper announcement cards -->
+    <div class="gallery-strip">
+      <div class="gallery-strip-label">— Selected Paper Announcements</div>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="assets/sekhmet-card.png" alt="SEKHMET — Best Paper Award NG-RES 2026 / HiPEAC 2026 announcement, supported by AFRL and US Navy" loading="lazy">
+          <div class="gtitle"><b>SEKHMET</b> — Best Paper, NG-RES 2026</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/seshat-card.png" alt="SESHAT — Spacecraft Cryptographic Service Plane on ARM+FPGA SoCs, accepted at SEE/SoCS 2026, San Diego" loading="lazy">
+          <div class="gtitle"><b>SESHAT</b> — SEE/SoCS 2026, San Diego</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/hours-card.png" alt="HOURS — Lightweight Orchestrated Security for UAV Swarm Telemetry, PerCom 2026 / SPT-IoT 2026, supported by AFRL and US Navy" loading="lazy">
+          <div class="gtitle"><b>HOURS</b> — PerCom / SPT-IoT 2026</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/neith-card.png" alt="NEITH — Networked Evidence Integrity for Telemetry Hashing, accepted at IEEE Conference on Secure and Trustworthy Cyber Infrastructure for IoT and Microelectronics (SaTC) 2026" loading="lazy">
+          <div class="gtitle"><b>NEITH</b> — IEEE SaTC 2026</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/maat-card.png" alt="Ma'at — FPGA-Assisted Dual-Core Architecture for Deterministic IoT Telemetry Integrity, with Wen-Mei Hwu and Benny Cheng (Naval Surface Warfare Center, Corona Division)" loading="lazy">
+          <div class="gtitle"><b>MA'AT</b> — MILCOM 2025</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/horus-icm-card.png" alt="HORUS — Hash-Oriented Resilient Unforgeable Sensing, ICM 2025 Cairo, December 14-17 2025, with AFRL support" loading="lazy">
+          <div class="gtitle"><b>HORUS</b> — ICM 2025, Cairo</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/ptah-card.png" alt="Ptah — NLP-Controlled Drones with Edge AI and Kubernetes, ACM Library publication with Dr. Mohamed El-Hadedy (Lead), Dr. Benny Cheng (US Navy), Dr. Wen-Mei Hwu (UIUC/NVIDIA)" loading="lazy">
+          <div class="gtitle"><b>PTAH</b> — ACM WCAE 2025</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/khonsu-architecture.png" alt="KHONSU — Kernel Hash Offload Network of Swappable Units for Post-Quantum Signatures, HEART 2026, Heidelberg — full architecture diagram per AUP-ZU3 worker" loading="lazy">
+          <div class="gtitle"><b>KHONSU</b> — HEART 2026, Heidelberg</div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/gomactech-poster.png" alt="GomacTech 2026 — Trusted Microelectronics for NLP-Controlled UAV Swarms, full conference poster" loading="lazy">
+          <div class="gtitle"><b>GomacTech</b> — UAV Swarms 2026</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="capabilities">
   <div class="wrap">
     <div class="section-eyebrow">— What We Do</div>
@@ -1077,7 +1216,9 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
       <span>U.S. Air Force Research Laboratory</span>
       <span>U.S. Army Research Office</span>
       <span>U.S. Navy NEEC / ONR</span>
+      <span>NSWC Corona</span>
       <span>NASA</span>
+      <span>Lawrence Berkeley National Lab</span>
       <span>USAFA</span>
     </div>
   </div>
@@ -1086,21 +1227,21 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 <section id="publications">
   <div class="wrap">
     <div class="section-eyebrow">— Publications</div>
-    <h2 class="section-h2">Peer-reviewed, on the record.</h2>
-    <p class="section-lede">Recent work from 2022 forward. <em style="color:var(--gold-bright); font-style:normal; font-family:var(--display); font-weight:600;">741 citations</em>, h-index 14, i10-index 19. Including accepted papers not yet indexed.</p>
+    <h2 class="section-h2">Two decades. Sixty-plus papers. Four patents.</h2>
+    <p class="section-lede">A complete record from 2006 forward. <em style="color:var(--gold-bright); font-style:normal; font-family:var(--display); font-weight:600;">741 citations</em>, h-index 14, i10-index 19. Including accepted papers not yet indexed.</p>
     <div class="pub-list">
 
-      <div class="pub-year">2026 <span class="ycount">· 8 papers</span></div>
+      <div class="pub-year">2026 <span class="ycount">· 9 entries</span></div>
 
-      <div class="pub"><div class="marker">[01]</div><div><div class="title">SEKHMET: Hash-Chained Perception Contracts for Heterogeneous Real-Time Edge Clusters</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">NG-RES / HiPEAC<br>Krakow · Best Paper</div></div>
+      <div class="pub"><div class="marker">[01]</div><div><div class="title">SEKHMET: Hash-Chained Perception Contracts for Heterogeneous Real-Time Edge Clusters</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">NG-RES / HiPEAC · Krakow<br><span class="status-badge" style="border-color:var(--magenta); color:var(--magenta);">Best Paper</span></div></div>
 
-      <div class="pub"><div class="marker">[02]</div><div><div class="title">KHONSU: Kernel Hash Offload Network of Swappable Units for Post-Quantum Signatures</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">HEART<br>Heidelberg · Accepted</div></div>
+      <div class="pub"><div class="marker">[02]</div><div><div class="title">KHONSU: Kernel Hash Offload Network of Swappable Units for Post-Quantum Signatures</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">HEART · Heidelberg<br><span class="status-badge">Accepted</span></div></div>
 
-      <div class="pub"><div class="marker">[03]</div><div><div class="title">SESHAT: A Spacecraft Cryptographic Service Plane on ARM+FPGA SoCs</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">MAPLD<br>To be presented</div></div>
+      <div class="pub"><div class="marker">[03]</div><div><div class="title">SESHAT: A Spacecraft Cryptographic Service Plane on ARM+FPGA SoCs</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">MAPLD<br><span class="status-badge">To be presented</span></div></div>
 
       <div class="pub"><div class="marker">[04]</div><div><div class="title">HOURS: Lightweight, Orchestrated Security for UAV Swarm Telemetry</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">IEEE PERCOM<br>SPT-IoT · Pisa</div></div>
 
-      <div class="pub"><div class="marker">[05]</div><div><div class="title">KHEPRI: Verifiable Perception Windows with Keepalive and Hot-Swap Recovery on Edge Microclusters</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">SCV<br>Accepted</div></div>
+      <div class="pub"><div class="marker">[05]</div><div><div class="title">KHEPRI: Verifiable Perception Windows with Keepalive and Hot-Swap Recovery on Edge Microclusters</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">SCV<br><span class="status-badge">Accepted</span></div></div>
 
       <div class="pub"><div class="marker">[06]</div><div><div class="title">Trusted Microelectronics for NLP-Controlled UAV Swarms in Contested Environments</div><div class="auth">El-Hadedy, M., Cheng, B.</div></div><div class="venue">GomacTech<br>Presented</div></div>
 
@@ -1108,7 +1249,9 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 
       <div class="pub"><div class="marker">[08]</div><div><div class="title">RSCL Earth Lookback Simulator: Real-Time Multi-Physics Framework for Relativistic Signal Propagation from Confirmed Milky Way Exoplanets</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">arXiv<br>Preprint</div></div>
 
-      <div class="pub-year">2025 <span class="ycount">· 7 papers</span></div>
+      <div class="pub"><div class="marker">[09]</div><div><div class="title">NEITH: Networked Evidence Integrity for Telemetry Hashing</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">IEEE SaTC<br>Accepted</div></div>
+
+      <div class="pub-year">2025 <span class="ycount">· 9 entries</span></div>
 
       <div class="pub"><div class="marker">[09]</div><div><div class="title">ANUBIS: Hybrid FPAA-FPGA Architecture for Entropy-Based True Random Number Generation in Secure UAV Communication</div><div class="auth">El-Hadedy, M., Abelian, A., Lee, K., Cheng, B. N., Hwu, W.-M.</div></div><div class="venue">IEEE ESL<br>Vol. 17 · No. 3</div></div>
 
@@ -1122,38 +1265,180 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 
       <div class="pub"><div class="marker">[14]</div><div><div class="title">Thoth: Reliable Orchestration of Post-Quantum Secure Communication in Multi-Architecture Edge Clusters</div><div class="auth">El-Hadedy, M., Hwu, W.-M.</div></div><div class="venue">IEEE ISSREW<br>São Paulo</div></div>
 
-      <div class="pub"><div class="marker">[15]</div><div><div class="title">Ptah: Teaching Computer Architecture through NLP-Controlled Drones with Edge AI and Kubernetes</div><div class="auth">El-Hadedy, M., Cheng, B., Hwu, W.-M.</div></div><div class="venue">ACM WCAE<br>Tokyo</div></div>
+      <div class="pub"><div class="marker">[15]</div><div><div class="title">QuickCommand: A Low-Latency NLP Pipeline for Reliable UAV Telepresence <a href="https://github.com/QuickCommand/Resaise2025" target="_blank" rel="noopener" style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; color:var(--gold-bright); border-bottom:1px solid var(--gold); text-decoration:none; margin-left:8px; padding-bottom:1px;">code &amp; data &rarr;</a></div><div class="auth">El-Hadedy, M., Hwu, W.-M. — 19 ms median E2E latency, 100% accuracy on CPU-only Quantized-BERT</div></div><div class="venue">ReSAISE / ISSREW<br>São Paulo</div></div>
 
-      <div class="pub-year">2024 <span class="ycount">· 4 entries</span></div>
+      <div class="pub"><div class="marker">[16]</div><div><div class="title">Ptah: Teaching Computer Architecture through NLP-Controlled Drones with Edge AI and Kubernetes</div><div class="auth">El-Hadedy, M., Cheng, B., Hwu, W.-M.</div></div><div class="venue">ACM WCAE<br>Tokyo</div></div>
 
-      <div class="pub"><div class="marker">[16]</div><div><div class="title">Reconfigurable Crypto-Processor</div><div class="auth">El-Hadedy, M., Hwu, W.-M., Skadron, K. — U.S. Patent 11,977,883 B2 — Issued May 7, 2024</div></div><div class="venue">Patent<br>UVA · UIUC</div></div>
+      <div class="pub"><div class="marker">[17]</div><div><div class="title">Ra: Long-Range FPGA Streaming and Dynamic Partial Reconfiguration Over LoRa with RISC-V MicroBlaze Watchdog</div><div class="auth">El-Hadedy, M., Hwu, W.-M., Cheng, B.</div></div><div class="venue">SEE/MAPLD<br>San Diego · Oral</div></div>
 
-      <div class="pub"><div class="marker">[17]</div><div><div class="title">SENTINEL: Scalable Edge Network for Telepresence and Integrated AI</div><div class="auth">El-Hadedy, M., Ung, J., Kim, D., Hwu, W.-M., He, Y., Cheng, B.</div></div><div class="venue">IEEE Telepresence<br>Pasadena</div></div>
+      <div class="pub"><div class="marker">[★]</div><div><div class="title">3rd Place — IEEE Telepresence Competition 2025</div><div class="auth">El-Hadedy, M. &amp; RSC Lab Team — Tele-operating a rover with full telemetry on simulated lunar terrain</div></div><div class="venue">IEEE Telepresence<br>Perth, Australia</div></div>
 
-      <div class="pub"><div class="marker">[18]</div><div><div class="title">Securing the Internet of Medical Things with K3S and Hybrid Cryptography</div><div class="auth">El-Hadedy, M., Ankunda, P., Ung, J., Hwu, W.-M.</div></div><div class="venue">IEEE DCAS<br>Richardson</div></div>
+      <div class="pub-year">2024 <span class="ycount">· 5 entries</span></div>
 
-      <div class="pub"><div class="marker">[19]</div><div><div class="title">Optimizing ASCON Permutation in Multi-Clock Domains with Chisel</div><div class="auth">El-Hadedy, M., Hua, R., Yoshii, K., Hwu, W.-M.</div></div><div class="venue">IEEE DCAS<br>Richardson</div></div>
+      <div class="pub"><div class="marker">[17]</div><div><div class="title">Reconfigurable Crypto-Processor</div><div class="auth">El-Hadedy, M., Hwu, W.-M., Skadron, K. — U.S. Patent 11,977,883 B2 — Issued May 7, 2024</div></div><div class="venue">Patent<br>UVA · UIUC</div></div>
 
-      <div class="pub-year">2023 <span class="ycount">· 3 papers</span></div>
+      <div class="pub"><div class="marker">[18]</div><div><div class="title">SENTINEL: Scalable Edge Network for Telepresence and Integrated AI</div><div class="auth">El-Hadedy, M., Ung, J., Kim, D., Hwu, W.-M., He, Y., Cheng, B.</div></div><div class="venue">IEEE Telepresence<br>Pasadena</div></div>
 
-      <div class="pub"><div class="marker">[20]</div><div><div class="title">RECO-ASCON: Reconfigurable ASCON Hash Functions for IoT Applications</div><div class="auth">El-Hadedy, M., Guo, X., Yoshii, K., Cai, Y., Herndon, R., Banta, B., Hwu, W.-M.</div></div><div class="venue">Elsevier Integration<br>Vol. 93 · Journal</div></div>
+      <div class="pub"><div class="marker">[19]</div><div><div class="title">Securing the Internet of Medical Things with K3S and Hybrid Cryptography</div><div class="auth">El-Hadedy, M., Ankunda, P., Ung, J., Hwu, W.-M.</div></div><div class="venue">IEEE DCAS<br>Richardson</div></div>
 
-      <div class="pub"><div class="marker">[21]</div><div><div class="title">BLTESTI: Benchmarking Lightweight TinyJAMBU on Embedded Systems for Trusted IoT</div><div class="auth">El-Hadedy, M., Hua, R., Saqib, S., Yoshii, K., Hwu, W.-M., Margala, M.</div></div><div class="venue">IEEE SoCC<br>Santa Ana</div></div>
+      <div class="pub"><div class="marker">[20]</div><div><div class="title">Optimizing ASCON Permutation in Multi-Clock Domains with Chisel</div><div class="auth">El-Hadedy, M., Hua, R., Yoshii, K., Hwu, W.-M.</div></div><div class="venue">IEEE DCAS<br>Richardson</div></div>
 
-      <div class="pub"><div class="marker">[22]</div><div><div class="title">RECO-LFSR: Reconfigurable Low-Power Cryptographic Processor Based on LFSR for Trusted IoT</div><div class="auth">El-Hadedy, M., Hua, R., Yoshii, K., Hwu, W.-M., Margala, M.</div></div><div class="venue">IEEE ISQED<br>Conference</div></div>
+      <div class="pub"><div class="marker">[21]</div><div><div class="title">Revolutionizing UAV Control: Integrating NLP with Advanced FPGA and FPAA Technologies for Dynamic Reconfigurability</div><div class="auth">El-Hadedy, M., Abelian, A., Ung, J., Cheng, B., Hwu, W.-M.</div></div><div class="venue">SEE/MAPLD<br>La Jolla</div></div>
 
-      <div class="pub-year">2022 <span class="ycount">· 5 papers</span></div>
+      <div class="pub-year">2023 <span class="ycount">· 4 entries</span></div>
 
-      <div class="pub"><div class="marker">[23]</div><div><div class="title">Agile-AES: Implementation of Configurable AES Primitive with Agile Design Approach</div><div class="auth">Guo, X.*, El-Hadedy, M.*, Mosanu, S., Wei, X., Skadron, K., Stan, M.</div></div><div class="venue">Elsevier Integration<br>VLSI · Vol. 85</div></div>
+      <div class="pub"><div class="marker">[22]</div><div><div class="title">RECO-ASCON: Reconfigurable ASCON Hash Functions for IoT Applications</div><div class="auth">El-Hadedy, M., Guo, X., Yoshii, K., Cai, Y., Herndon, R., Banta, B., Hwu, W.-M.</div></div><div class="venue">Elsevier Integration<br>Vol. 93 · Journal</div></div>
 
-      <div class="pub"><div class="marker">[24]</div><div><div class="title">RECO-HCON: A High-Throughput Reconfigurable Compact ASCON Processor for Trusted IoT</div><div class="auth">Wei, X.*, El-Hadedy, M.*, Mosanu, S., Zhu, Z., Hwu, W.-M., Guo, X.</div></div><div class="venue">IEEE SoCC<br>Belfast</div></div>
+      <div class="pub"><div class="marker">[23]</div><div><div class="title">BLTESTI: Benchmarking Lightweight TinyJAMBU on Embedded Systems for Trusted IoT</div><div class="auth">El-Hadedy, M., Hua, R., Saqib, S., Yoshii, K., Hwu, W.-M., Margala, M.</div></div><div class="venue">IEEE SoCC<br>Santa Ana</div></div>
 
-      <div class="pub"><div class="marker">[25]</div><div><div class="title">ReaLSE: Reconfigurable Lightweight Security Engines for Trusted Edge Devices</div><div class="auth">El-Hadedy, M., Guo, X.</div></div><div class="venue">IEEE ICCS<br>Chengdu</div></div>
+      <div class="pub"><div class="marker">[24]</div><div><div class="title">RECO-LFSR: Reconfigurable Low-Power Cryptographic Processor Based on LFSR for Trusted IoT</div><div class="auth">El-Hadedy, M., Hua, R., Yoshii, K., Hwu, W.-M., Margala, M.</div></div><div class="venue">IEEE ISQED<br>Conference</div></div>
 
-      <div class="pub"><div class="marker">[26]</div><div><div class="title">RECO-ASCON: Reconfigurable Lightweight ASCON Hash Functions for IoT</div><div class="auth">El-Hadedy, M., Yoshii, K., Formicola, V., Guo, X., Hwu, W.-M.</div></div><div class="venue">CCF Chip<br>Nanjing</div></div>
+      <div class="pub"><div class="marker">[25]</div><div><div class="title">SHRECO-HRCT: Self-Healing Reconfigurable High-Throughput Compact TinyJAMBU Processor for Trusted IoT</div><div class="auth">El-Hadedy, M., Margala, M., Hwu, W.-M.</div></div><div class="venue">SEE/MAPLD<br>La Jolla</div></div>
 
-      <div class="pub"><div class="marker">[27]</div><div><div class="title">Post-Quantum Stateful Hash-Based Signature Scheme for Improved Bluetooth Security</div><div class="auth">El-Hadedy, M., Formicola, V., Hwu, W.-M.</div></div><div class="venue">SEE / MAPLD<br>La Jolla</div></div>
+      <div class="pub-year">2022 <span class="ycount">· 5 entries</span></div>
 
+      <div class="pub"><div class="marker">[24]</div><div><div class="title">Agile-AES: Implementation of Configurable AES Primitive with Agile Design Approach</div><div class="auth">Guo, X.*, El-Hadedy, M.*, Mosanu, S., Wei, X., Skadron, K., Stan, M.</div></div><div class="venue">Elsevier Integration<br>VLSI · Vol. 85</div></div>
+
+      <div class="pub"><div class="marker">[25]</div><div><div class="title">RECO-HCON: A High-Throughput Reconfigurable Compact ASCON Processor for Trusted IoT</div><div class="auth">Wei, X.*, El-Hadedy, M.*, Mosanu, S., Zhu, Z., Hwu, W.-M., Guo, X.</div></div><div class="venue">IEEE SoCC<br>Belfast</div></div>
+
+      <div class="pub"><div class="marker">[26]</div><div><div class="title">ReaLSE: Reconfigurable Lightweight Security Engines for Trusted Edge Devices</div><div class="auth">El-Hadedy, M., Guo, X.</div></div><div class="venue">IEEE ICCS<br>Chengdu</div></div>
+
+      <div class="pub"><div class="marker">[27]</div><div><div class="title">RECO-ASCON: Reconfigurable Lightweight ASCON Hash Functions for IoT</div><div class="auth">El-Hadedy, M., Yoshii, K., Formicola, V., Guo, X., Hwu, W.-M.</div></div><div class="venue">CCF Chip<br>Nanjing</div></div>
+
+      <div class="pub"><div class="marker">[28]</div><div><div class="title">Post-Quantum Stateful Hash-Based Signature Scheme for Improved Bluetooth Security</div><div class="auth">El-Hadedy, M., Formicola, V., Hwu, W.-M.</div></div><div class="venue">SEE / MAPLD<br>La Jolla</div></div>
+
+      <div class="pub-year">2021 <span class="ycount">· 4 entries</span></div>
+
+      <div class="pub"><div class="marker">[30]</div><div><div class="title">PRO-GAGE: A High-Performance Compact GAGE Hash Function Processor for Small Space Technology</div><div class="auth">El-Hadedy, M., Margala, M., Mosanu, S., Gligoroski, D., Xiong, J.</div></div><div class="venue">IEEE Space Computing<br>Conference</div></div>
+
+      <div class="pub"><div class="marker">[31]</div><div><div class="title">SHA-3-LPHP: Hardware Acceleration of SHA-3 for Low-Power High-Performance Systems</div><div class="auth">Akiya, Y., et al., El-Hadedy, M.</div></div><div class="venue">ISSRE<br>Wuhan</div></div>
+
+      <div class="pub"><div class="marker">[32]</div><div><div class="title">Reco-GAGE: A Reconfigurable Lightweight GAGE Hash Function Engine for IoT Devices</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">SEE/MAPLD<br>La Jolla</div></div>
+
+      <div class="pub"><div class="marker">[33]</div><div><div class="title">Design and Simulation of Bitcoin Mining and Implementation on ZYBO Z7-20 FPGA</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">SEE/MAPLD<br>La Jolla</div></div>
+
+      <div class="pub-year">2020 <span class="ycount">· 5 entries</span></div>
+
+      <div class="pub"><div class="marker">[34]</div><div><div class="title">Memory Systems Including Support for Transposition Operations and Related Methods and Circuits</div><div class="auth">El-Hadedy, M., Skadron, K. — U.S. Patent 10,664,241 B2 — Issued May 26, 2020</div></div><div class="venue">Patent<br>UVA</div></div>
+
+      <div class="pub"><div class="marker">[35]</div><div><div class="title">MICRO-GAGE: A Low-Power Compact GAGE Hash Function Processor for IoT</div><div class="auth">El-Hadedy, M., Margala, M., Mosanu, S., Gligoroski, D., Xiong, J., Hwu, W.-M.</div></div><div class="venue">IEEE ICECS<br>Glasgow (Virtual)</div></div>
+
+      <div class="pub"><div class="marker">[36]</div><div><div class="title">Evaluating Post-Quantum Cryptographic Algorithms on Quantum Machines</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">Quantum U Tech Accelerator<br>Million Dollar Intl</div></div>
+
+      <div class="pub"><div class="marker">[37]</div><div><div class="title">Performance Evaluation of Wide-Range AI Applications on Raspberry Pi</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">SEE/MAPLD<br>La Jolla</div></div>
+
+      <div class="pub"><div class="marker">[38]</div><div><div class="title">Reconfigurable Image Processing Applications on FPGAs</div><div class="auth">El-Hadedy, M., Salah Eddin, A., El-Naga, H.</div></div><div class="venue">SEE/MAPLD · Poster<br>La Jolla</div></div>
+
+      <div class="pub-year">2019 <span class="ycount">· 5 entries</span></div>
+
+      <div class="pub"><div class="marker">[39]</div><div><div class="title">Reco-Pi: A Reconfigurable Cryptoprocessor for Pi-Cipher</div><div class="auth">El-Hadedy, M., Kulkarni, A., Stroobandt, D., Skadron, K.</div></div><div class="venue">JPDC<br>Vol. 133 · Journal</div></div>
+
+      <div class="pub"><div class="marker">[40]</div><div><div class="title">Analysis and Modeling of Collaborative Execution Strategies for Heterogeneous CPU-FPGA Architectures</div><div class="auth">Huang, S., et al., El-Hadedy, M.</div></div><div class="venue">ICPE<br>Conference</div></div>
+
+      <div class="pub"><div class="marker">[41]</div><div><div class="title">Flexi-AES: A Highly-Parameterizable Cipher for a Wide Range of Design Constraints</div><div class="auth">Mosanu, S., Guo, X., El-Hadedy, M., et al.</div></div><div class="venue">IEEE FCCM<br>Conference</div></div>
+
+      <div class="pub"><div class="marker">[42]</div><div><div class="title">RECO-CRYPT: Reconfigurable Crypto-Processor for Small Electronics</div><div class="auth">El-Hadedy, M., Anjum, O., Hwu, W.-M.</div></div><div class="venue">SRC TECHCON<br>Austin</div></div>
+
+      <div class="pub"><div class="marker">[43]</div><div><div class="title">Low-Power High-Performance Reconfigurable Computing Using FPGA</div><div class="auth">El-Hadedy, M.</div></div><div class="venue">SEE/MAPLD<br>La Jolla</div></div>
+
+      <div class="pub-year">2018 <span class="ycount">· 3 entries</span></div>
+
+      <div class="pub"><div class="marker">[38]</div><div><div class="title">A Compliant Mechanism for Inspecting Extremely Confined Spaces</div><div class="auth">Mascarenas, D., et al., El-Hadedy, M. — Patent Filed Oct 25, 2018</div></div><div class="venue">Patent<br>LANL</div></div>
+
+      <div class="pub"><div class="marker">[39]</div><div><div class="title">ASAP: Accelerated Short-Read Alignment on Programmable Hardware</div><div class="auth">Banerjee, S. S., El-Hadedy, M., Lim, J., Kalbarczyk, Z., Chen, D., Lumetta, S., Iyer, R.</div></div><div class="venue">IEEE Trans. Computers<br>Journal</div></div>
+
+      <div class="pub"><div class="marker">[40]</div><div><div class="title">Triangle Counting and Truss Decomposition using FPGA</div><div class="auth">Huang, S., El-Hadedy, M., et al.</div></div><div class="venue">IEEE HPEC<br>Conference</div></div>
+
+      <div class="pub-year">2017 <span class="ycount">· 7 entries</span></div>
+
+      <div class="pub"><div class="marker">[41]</div><div><div class="title">Dual-Data Rate Transpose-Memory Architecture Improves the Performance, Power and Area of Signal-Processing Systems</div><div class="auth">El-Hadedy, M., Guo, X., Margala, M., Stan, M., Skadron, K.</div></div><div class="venue">J. Signal Proc. Sys.<br>Vol. 88 · Journal</div></div>
+
+      <div class="pub"><div class="marker">[42]</div><div><div class="title">Accelerating Weeder: A DNA Motif Search Tool Using the Micron Automata Processor and FPGA</div><div class="auth">Wang, Q., El-Hadedy, M., Skadron, K., Wang, K.</div></div><div class="venue">IEICE Trans.<br>Vol. E100-D · Journal</div></div>
+
+      <div class="pub"><div class="marker">[43]</div><div><div class="title">A Compliant Mechanism for Inspecting Extremely Confined Spaces</div><div class="auth">Mascareñas, D., Moreu, F., Cantu, P., Shields, D., Wadden, J., El-Hadedy, M., Farrar, C.</div></div><div class="venue">Smart Materials &amp; Structures<br>Vol. 26 · Journal</div></div>
+
+      <div class="pub"><div class="marker">[44]</div><div><div class="title">RE-HASE: Regular-Expressions Hardware Synthesis Engine</div><div class="auth">El-Hadedy, M., Guo, X., Huang, X., Margala, M.</div></div><div class="venue">H2RC / SC17<br>Workshop</div></div>
+
+      <div class="pub"><div class="marker">[45]</div><div><div class="title">PPE-ARX: Area- and Power-Efficient VLIW Processing Element for IoT Crypto-Systems</div><div class="auth">El-Hadedy, M., Guo, X., Stan, M., Skadron, K.</div></div><div class="venue">NASA / ESA AHS<br>California</div></div>
+
+      <div class="pub"><div class="marker">[46]</div><div><div class="title">On Accelerating Pair-HMM Computations in Programmable Hardware</div><div class="auth">Banerjee, S. S., El-Hadedy, M., et al.</div></div><div class="venue">FPL<br>Ghent</div></div>
+
+      <div class="pub"><div class="marker">[47]</div><div><div class="title">Reco-CPIOT: Reconfigurable Crypto-Processor for Secure IoT</div><div class="auth">El-Hadedy, M., Formicola, V., Kourfali, A., Stroobandt, D., Skadron, K.</div></div><div class="venue">RFPL / FPL<br>Workshop</div></div>
+
+      <div class="pub-year">2016 <span class="ycount">· 3 entries</span></div>
+
+      <div class="pub"><div class="marker">[48]</div><div><div class="title">A 16-bit Reconfigurable Encryption Processor for Pi-Cipher</div><div class="auth">El-Hadedy, M., Mihajloska, H., Gligoroski, D., Kulkarni, A., Stroobandt, D., Skadron, K.</div></div><div class="venue">RAW / IPDPS<br><span class="status-badge" style="border-color:var(--magenta); color:var(--magenta);">Best Paper</span></div></div>
+
+      <div class="pub"><div class="marker">[49]</div><div><div class="title">Generating Efficient Pseudo-Random Behavior on Micron's Automata Processor</div><div class="auth">Wadden, J., Brunelle, N., Wang, K., El-Hadedy, M., et al.</div></div><div class="venue">IEEE ICCD<br>Conference</div></div>
+
+      <div class="pub"><div class="marker">[50]</div><div><div class="title">RAPID: Accelerating Pattern Search with Reconfigurable Hardware</div><div class="auth">Angstadt, K., Wadden, J., Huang, X., El-Hadedy, M., et al.</div></div><div class="venue">SRC TECHCON<br><span class="status-badge" style="border-color:var(--magenta); color:var(--magenta);">Best Paper · Session</span></div></div>
+
+      <div class="pub-year">2015 <span class="ycount">· 3 entries</span></div>
+
+      <div class="pub"><div class="marker">[51]</div><div><div class="title">Programmable Processing Element for Crypto-Systems on FPGAs</div><div class="auth">El-Hadedy, M., Skadron, K., Mihajloska, H., Gligoroski, D.</div></div><div class="venue">HEART<br>Boston</div></div>
+
+      <div class="pub"><div class="marker">[52]</div><div><div class="title">Hardware Overhead Analysis of Programmability in ARX Crypto Processing</div><div class="auth">El-Hadedy, M., Skadron, K.</div></div><div class="venue">HASP<br>Portland</div></div>
+
+      <div class="pub"><div class="marker">[53]</div><div><div class="title">Area Efficient Reconfigurable Processing Element for Crypto-Systems</div><div class="auth">El-Hadedy, M., Skadron, K.</div></div><div class="venue">DAC<br>San Francisco</div></div>
+
+      <div class="pub-year">2014 <span class="ycount">· 1 entry</span></div>
+
+      <div class="pub"><div class="marker">[54]</div><div><div class="title">Π-Cipher: Authenticated Encryption for Big Data</div><div class="auth">Gligoroski, D., et al., El-Hadedy, M.</div></div><div class="venue">NordSec<br>Conference</div></div>
+
+      <div class="pub-year">2011 <span class="ycount">· 1 entry</span></div>
+
+      <div class="pub"><div class="marker">[55]</div><div><div class="title">An Efficient Authorship Protection Scheme for Shared Multimedia Content</div><div class="auth">El-Hadedy, M., Pitsilis, G., Knapskog, S. J.</div></div><div class="venue">ICIG<br>Conference</div></div>
+
+      <div class="pub-year">2010 <span class="ycount">· 4 entries</span></div>
+
+      <div class="pub"><div class="marker">[56]</div><div><div class="title">Compact Implementation of Blue Midnight Wish-256 Hash Function on Xilinx FPGA</div><div class="auth">El-Hadedy, M., Gligoroski, D., Knapskog, S. J., Margala, M.</div></div><div class="venue">J. Information Assurance<br>Vol. 5 · Journal</div></div>
+
+      <div class="pub"><div class="marker">[57]</div><div><div class="title">Resource-Efficient Implementation of Blue Midnight Wish-256</div><div class="auth">El-Hadedy, M., Margala, M., Gligoroski, D., Knapskog, S. J.</div></div><div class="venue">IAS<br>Atlanta</div></div>
+
+      <div class="pub"><div class="marker">[58]</div><div><div class="title">Performance and Area Efficient Transpose Memory Architecture</div><div class="auth">El-Hadedy, M., Purohit, S., Margala, M., Knapskog, S. J.</div></div><div class="venue">NASA / ESA AHS<br>Anaheim</div></div>
+
+      <div class="pub"><div class="marker">[59]</div><div><div class="title">Low Latency Transpose Memory for High Throughput Signal Processing</div><div class="auth">El-Hadedy, M., Purohit, S., Margala, M., Knapskog, S. J.</div></div><div class="venue">NEWCAS<br>Montreal</div></div>
+
+      <div class="pub-year">2009 <span class="ycount">· 2 entries</span></div>
+
+      <div class="pub"><div class="marker">[60]</div><div><div class="title">Low Area FPGA and ASIC Implementations of Blue Midnight Wish-256</div><div class="auth">El-Hadedy, M., Gligoroski, D., Knapskog, S. J.</div></div><div class="venue">ICCES<br>Conference</div></div>
+
+      <div class="pub"><div class="marker">[61]</div><div><div class="title">Low Area Implementation of Blue Midnight Wish-256 for FPGA</div><div class="auth">El-Hadedy, M., Gligoroski, D., Knapskog, S. J.</div></div><div class="venue">INCoS<br>Barcelona</div></div>
+
+      <div class="pub-year">2006 <span class="ycount">· 1 entry</span></div>
+
+      <div class="pub"><div class="marker">[62]</div><div><div class="title">Comparisons of DCT-Based and DWT-Based Watermarking Techniques</div><div class="auth">Saleh, H. I., El-Hadedy, M., Ashour, M. A., Aboelsaud, M. A.</div></div><div class="venue">Int J Sci Research<br>Vol. 16 · Journal</div></div>
+
+      <div class="pub-year">Patent (also issued 2021) <span class="ycount">· 1 entry</span></div>
+
+      <div class="pub"><div class="marker">[63]</div><div><div class="title">Reconfigurable Crypto-Processor for Secure IoT Applications</div><div class="auth">El-Hadedy, M., Hwu, W.-M., Skadron, K. — U.S. Patent 11,157,275 — 2021</div></div><div class="venue">Patent<br>UVA · UIUC</div></div>
+
+    </div>
+
+    <!-- Invited Talks subsection -->
+    <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--rule);">
+      <div class="section-eyebrow">— Invited Talks &amp; Keynotes</div>
+      <h2 style="font-family: var(--display); font-weight: 700; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 32px; color: var(--paper);">Where the work is being heard.</h2>
+
+      <div class="pub-list" style="border-top: 1px solid var(--rule);">
+        <div class="pub">
+          <div class="marker">★</div>
+          <div>
+            <div class="title">Secure Edge Intelligence for Autonomous Systems: Real-Time NLP Teleoperations &amp; Post-Quantum Telemetry on K3s</div>
+            <div class="auth">Mohamed El-Hadedy &mdash; <em>Invited Talk</em>, ARCHIDE: 2nd Workshop on Architecture Design Methodologies and Ecosystems for HPC and Scientific Edge Computing</div>
+          </div>
+          <div class="venue">Lawrence Berkeley<br>National Lab · 2025</div>
+        </div>
+
+        <div class="pub">
+          <div class="marker">★</div>
+          <div>
+            <div class="title">Resource-Efficient Cryptography and Secure IoMT: Enhancing Embedded Systems with Post-Quantum and Multi-Clock Domain Optimizations</div>
+            <div class="auth">Mohamed El-Hadedy &mdash; <em>Invited Talk</em>, ARCHIDE: 1st Workshop on Architecture Design Methodologies and Ecosystems for HPC and Scientific Edge Computing</div>
+          </div>
+          <div class="venue">Lawrence Berkeley<br>National Lab · 2024</div>
+        </div>
+      </div>
     </div>
 
     <div class="pub-more">
