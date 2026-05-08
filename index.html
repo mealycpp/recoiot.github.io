@@ -365,12 +365,13 @@ section { position: relative; z-index: 10; padding: 120px 0; border-top: 1px sol
 @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; gap: 40px; } }
 .bio-portrait { aspect-ratio: 4/5; background: linear-gradient(180deg, rgba(30,75,168,0.25), rgba(212,175,55,0.10)); border: 1px solid var(--gold); position: relative; overflow: hidden; }
 .bio-portrait::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(45deg, transparent 49%, rgba(244,236,214,0.04) 49%, rgba(244,236,214,0.04) 51%, transparent 51%); background-size: 8px 8px; }
-.bio-portrait .frame { position: absolute; inset: 14px; border: 1px solid var(--gold); }
-.bio-portrait .name-plate { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 24px; background: linear-gradient(180deg, transparent, rgba(5,11,31,0.85) 30%, rgba(5,11,31,0.95)); }
+.bio-portrait .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; z-index: 1; }
+.bio-portrait .frame { position: absolute; inset: 14px; border: 1px solid var(--gold); z-index: 3; pointer-events: none; }
+.bio-portrait .name-plate { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 24px; background: linear-gradient(180deg, transparent, rgba(5,11,31,0.85) 30%, rgba(5,11,31,0.95)); z-index: 4; }
 .bio-portrait .nm-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; color: var(--gold-bright); text-transform: uppercase; margin-bottom: 8px; }
 .bio-portrait .nm-name { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--paper); line-height: 1.05; letter-spacing: -0.01em; }
 .bio-portrait .nm-role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: var(--paper-mute); text-transform: uppercase; margin-top: 8px; }
-.bio-portrait .corner-tl, .bio-portrait .corner-tr, .bio-portrait .corner-bl, .bio-portrait .corner-br { position: absolute; width: 24px; height: 24px; border: 1px solid var(--gold-bright); }
+.bio-portrait .corner-tl, .bio-portrait .corner-tr, .bio-portrait .corner-bl, .bio-portrait .corner-br { position: absolute; width: 24px; height: 24px; border: 1px solid var(--gold-bright); z-index: 5; }
 .bio-portrait .corner-tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
 .bio-portrait .corner-tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
 .bio-portrait .corner-bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
@@ -1483,8 +1484,9 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
   <div class="wrap">
     <div class="bio-grid">
 
-      <!-- Portrait placeholder (gold-bordered, designed to look intentional even without a photo) -->
+      <!-- Portrait with real photo -->
       <div class="bio-portrait">
+        <img src="assets/mealy.jpeg" alt="Dr. Mohamed El-Hadedy, Founder and CEO of RecoIoT LLC, tenured Associate Professor at Cal Poly Pomona, director of the Reconfigurable Space Computing Lab" class="photo" loading="lazy">
         <div class="corner-tl"></div>
         <div class="corner-tr"></div>
         <div class="corner-bl"></div>
