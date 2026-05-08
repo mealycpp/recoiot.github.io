@@ -424,6 +424,9 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 /* ===== ENTRANCE ===== */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
+/* Safety: force publications visibility regardless of reveal/observer state */
+.pub, .pub-year, .pub-list, .pub-more { opacity: 1 !important; transform: none !important; }
+#publications.reveal, #publications { opacity: 1 !important; }
 .hero-eyebrow { animation: fadeUp 0.9s 0.2s both; }
 .hero h1      { animation: fadeUp 1s 0.4s both; }
 .hero .acronym{ animation: fadeUp 1s 0.55s both; }
@@ -1593,8 +1596,10 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
 </footer>
 
 <script>
-const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: 0.1 });
-document.querySelectorAll('section, .cap, .prog, .pub, .thrust, .stat, .system-card, .platform-card, .sensor').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
+const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: 0.05 });
+document.querySelectorAll('section, .cap, .prog, .thrust, .stat, .system-card, .platform-card, .sensor').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
+// Force all publications visible — no fade-in (prevents stuck-invisible bug with dense lists)
+document.querySelectorAll('.pub').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
 document.querySelectorAll('nav.top a[href^="#"]').forEach(link => {
   link.addEventListener('click', () => {
     const id = link.getAttribute('href').slice(1);
