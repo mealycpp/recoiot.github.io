@@ -358,6 +358,35 @@ section { position: relative; z-index: 10; padding: 120px 0; border-top: 1px sol
 .pub-more .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--paper-mute); text-transform: uppercase; }
 .pub-more a { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--gold-bright); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: color 0.2s; }
 .pub-more a:hover { color: var(--paper); }
+
+/* ===== CEO BIO ===== */
+.bio-section { padding: 120px 0; border-top: 1px solid var(--rule); }
+.bio-grid { display: grid; grid-template-columns: 380px 1fr; gap: 64px; align-items: start; }
+@media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; gap: 40px; } }
+.bio-portrait { aspect-ratio: 4/5; background: linear-gradient(180deg, rgba(30,75,168,0.25), rgba(212,175,55,0.10)); border: 1px solid var(--gold); position: relative; overflow: hidden; }
+.bio-portrait::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(45deg, transparent 49%, rgba(244,236,214,0.04) 49%, rgba(244,236,214,0.04) 51%, transparent 51%); background-size: 8px 8px; }
+.bio-portrait .frame { position: absolute; inset: 14px; border: 1px solid var(--gold); }
+.bio-portrait .name-plate { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 24px; background: linear-gradient(180deg, transparent, rgba(5,11,31,0.85) 30%, rgba(5,11,31,0.95)); }
+.bio-portrait .nm-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; color: var(--gold-bright); text-transform: uppercase; margin-bottom: 8px; }
+.bio-portrait .nm-name { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--paper); line-height: 1.05; letter-spacing: -0.01em; }
+.bio-portrait .nm-role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: var(--paper-mute); text-transform: uppercase; margin-top: 8px; }
+.bio-portrait .corner-tl, .bio-portrait .corner-tr, .bio-portrait .corner-bl, .bio-portrait .corner-br { position: absolute; width: 24px; height: 24px; border: 1px solid var(--gold-bright); }
+.bio-portrait .corner-tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.bio-portrait .corner-tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+.bio-portrait .corner-bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+.bio-portrait .corner-br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+.bio-content .section-eyebrow { margin-bottom: 18px; }
+.bio-content h2 { font-family: var(--display); font-weight: 700; font-size: clamp(32px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.02em; color: var(--paper); margin-bottom: 28px; }
+.bio-content h2 em { font-style: normal; color: var(--gold-bright); }
+.bio-content .bio-lede { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.5; color: var(--paper); margin-bottom: 32px; padding-left: 20px; border-left: 2px solid var(--gold); }
+.bio-content p { font-family: var(--serif); font-size: 17px; line-height: 1.65; color: var(--paper-mute); margin-bottom: 18px; }
+.bio-content p strong { color: var(--paper); font-weight: 600; }
+.bio-creds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 32px; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--rule); }
+@media (max-width: 800px) { .bio-creds { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .bio-creds { grid-template-columns: 1fr; } }
+.bio-cred .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; color: var(--gold-bright); text-transform: uppercase; margin-bottom: 8px; }
+.bio-cred .val { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--paper); line-height: 1.4; }
+.bio-cred .val small { display: block; font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 0.1em; color: var(--paper-mute); margin-top: 4px; text-transform: none; }
 .pub { display: grid; grid-template-columns: 60px 1fr 140px; gap: 24px; align-items: start; padding: 24px 0; border-bottom: 1px solid var(--rule); transition: background 0.3s; }
 .pub:hover { background: rgba(30,75,168,0.06); }
 @media (max-width: 800px) { .pub { grid-template-columns: 60px 1fr; } .pub .venue { grid-column: 2; } }
@@ -428,6 +457,7 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
       <li><a href="#capabilities">Capabilities</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#leadership">Leadership</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -1444,6 +1474,80 @@ footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; ga
     <div class="pub-more">
       <div class="label">— Full bibliography</div>
       <a href="https://scholar.google.com/citations?user=bIwdroAAAAAJ" target="_blank" rel="noopener">View on Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CEO BIO ===== -->
+<section id="leadership" class="bio-section">
+  <div class="wrap">
+    <div class="bio-grid">
+
+      <!-- Portrait placeholder (gold-bordered, designed to look intentional even without a photo) -->
+      <div class="bio-portrait">
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+        <div class="frame"></div>
+        <div class="name-plate">
+          <div class="nm-label">— Founder &amp; CEO</div>
+          <div class="nm-name">Dr. Mohamed El-Hadedy</div>
+          <div class="nm-role">RecoIoT LLC · Cal Poly Pomona</div>
+        </div>
+      </div>
+
+      <!-- Bio content -->
+      <div class="bio-content">
+        <div class="section-eyebrow">— Leadership</div>
+        <h2>Building <em>real systems</em> for places software alone won't reach.</h2>
+
+        <p class="bio-lede">"I want my hardware to deserve its name. If a system is called HORUS, then it had better watch. If it is called MA'AT, it had better keep order. The naming is a promise to the people who depend on it."</p>
+
+        <p><strong>Dr. Mohamed El-Hadedy</strong> is the founder and CEO of RecoIoT LLC and a <strong>tenured Associate Professor</strong> in the Department of Electrical &amp; Computer Engineering at California State Polytechnic University, Pomona, where he directs the <strong>Reconfigurable Space Computing Lab (RSCL@CPP)</strong>.</p>
+
+        <p>His research sits at the intersection of reconfigurable computing, embedded security, flight software, and mission-driven autonomy. What makes the work distinctive is that it does not stop at algorithms or simulations &mdash; it produces complete systems: FPGA and MPSoC prototypes, Kubernetes/edge testbeds, flight-software integrations, drone platforms, cryptographic services, sensor pipelines, and defense-relevant autonomy experiments. <strong>SEKHMET</strong> won Best Paper at NG-RES 2026/HiPEAC. <strong>HORUS</strong> turns unavoidable multirotor blade-pass noise into an acoustic side-channel for GPS- and RF-denied swarm awareness. <strong>MEHEN</strong> (under review at IEEE Space Computing) makes programmable fabric the backend of an F&prime; flight-software security component &mdash; not just hardware acceleration, but operationally visible security services integrated into real flight workflows. The core pattern across the work is capability creation, not incremental exercises.</p>
+
+        <p>Mohamed earned his <strong>Ph.D. from the Norwegian University of Science and Technology (NTNU)</strong>, with a dissertation in cryptographic hardware co-design. He holds a Master's and Bachelor's in Electronics Engineering from <strong>Mansoura University, Egypt</strong>. Before academic research, from <strong>2004 to 2008</strong>, he served as a Research Scientist at the <strong>Egyptian Nuclear Research Reactor</strong> &mdash; a foundation that informs his ongoing work on radiation-tolerant computing, single-event-effects (SEE), and trustworthy electronics for space.</p>
+
+        <p>After NTNU he held positions as Postdoctoral Fellow at the <strong>University of Virginia</strong> and Senior Research Scientist at the <strong>University of Illinois Urbana-Champaign (UIUC)</strong> in collaboration with Wen-Mei Hwu. RecoIoT LLC was founded in 2017 to translate that research lineage into deliverable hardware for U.S. defense and space programs.</p>
+
+        <p>His record shows sustained, mission-aligned achievement: continuous federal support since 2017 from the <strong>Air Force Research Laboratory, U.S. Army Research Office, U.S. Navy NEEC and ONR, NSWC Corona, NASA, and Lawrence Berkeley National Lab</strong> &mdash; cumulative awards exceeding <strong>$5 million</strong>. <strong>Three issued U.S. patents</strong> in reconfigurable cryptographic processing and transposition-memory architecture, plus a fourth filed for a compliant inspection mechanism developed at Los Alamos National Laboratory. <strong>Three Best Paper Awards</strong> across NG-RES/HiPEAC 2026, RAW/IPDPS 2016, and SRC TECHCON 2016. <strong>Third Place</strong> at the 2025 IEEE Telepresence Competition in Perth, Australia. <strong>Invited talks at LBNL</strong> in 2024 and 2025. <strong>More than seventy peer-reviewed papers</strong>. Mentor of multiple <strong>NASA MINDS</strong> finalist and award-winning teams. Senior Member of both <strong>IEEE</strong> and <strong>ACM</strong>.</p>
+
+        <p>His operating thesis is straightforward: the strongest defense systems are not the ones with the most software, but the ones with the most <em>verifiable</em> silicon &mdash; hardware that can be reasoned about, audited, and trusted at the component level. RecoIoT is built around that belief.</p>
+
+        <div class="bio-creds">
+          <div class="bio-cred">
+            <div class="lbl">Doctorate</div>
+            <div class="val">Ph.D., NTNU<small>Norwegian Univ. of Science &amp; Technology</small></div>
+          </div>
+          <div class="bio-cred">
+            <div class="lbl">Foundation</div>
+            <div class="val">M.Sc. &amp; B.Sc.<small>Mansoura University, Egypt</small></div>
+          </div>
+          <div class="bio-cred">
+            <div class="lbl">Early Career</div>
+            <div class="val">Research Scientist<small>Egyptian Nuclear Research Reactor · 2004–2008</small></div>
+          </div>
+          <div class="bio-cred">
+            <div class="lbl">Academic Home</div>
+            <div class="val">Cal Poly Pomona<small>Tenured Associate Professor, ECE</small></div>
+          </div>
+          <div class="bio-cred">
+            <div class="lbl">Memberships</div>
+            <div class="val">IEEE Senior Member<small>ACM Senior Member</small></div>
+          </div>
+          <div class="bio-cred">
+            <div class="lbl">Patents Issued</div>
+            <div class="val">3 U.S. Patents<small>+1 filed (LANL)</small></div>
+          </div>
+          <div class="bio-cred">
+            <div class="lbl">Mentorship</div>
+            <div class="val">NASA MINDS<small>Multiple finalist &amp; award-winning teams</small></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
